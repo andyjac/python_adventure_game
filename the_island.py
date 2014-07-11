@@ -103,7 +103,7 @@ letter = """
     
     A bit disturbed, you refold the letter and stuff it into your pocket. 
     
-    "What did they mean by, 'He is always watching'? And who is this 'S.'? Are They
+    "What did they mean by, 'HE is always watching?' And who is this 'S.,' anyway? Are They
     still on the island?" 
     
     You try to push these frightening questions out of you mind; if this place is truly
@@ -191,11 +191,14 @@ def walk_back(place):
 
 def start():
     next = raw_input("> Press ENTER to begin ").lower()
+    
     if next == " ":
         print title
     else:
         print title
+    
     next = raw_input("> Press ENTER to continue").lower()
+    
     if next == " ":
         print intro, beach_text
         beach()
@@ -264,9 +267,15 @@ def read_letter():
             print letter
             beach()
         elif next == "n" or next == "no":
-            print lines_and_spaces, "You should probably read it."
-            print letter
-            beach()
+            print lines_and_spaces, "You should probably read it.\n"
+            next = raw_input("> ").lower()
+           
+            if next == " ":
+                print letter
+                beach()
+            else:
+                print letter
+                beach()
         else:
             print dunno                        
         
